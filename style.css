@@ -1,157 +1,20 @@
-body {
+/* resets */
+* {
   margin: 0;
-  color: aliceblue;
-  text-shadow: 2px 5px #000000;
-  font-family: "Special Elite", cursive;
-  background-image: url(assets/bg-1.jpg);
-  font-weight: bold;
-  font-size: larger;
+  padding: 0;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  font-family: 'Squada One', cursive;
 }
 
-.main-content {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-.form-container {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-}
-.start-popup,
-.end-popup {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  bottom: 0;
-}
-
-.start-popup-text,
-.end-popup-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  line-height: 25px;
-  width: 290px;
-  height: 200px;
-  padding: 20px;
-  border-radius: 20px;
-  background-image: url(assets/header-footer-popup-bg.jpg);
-  box-shadow: 0px 0px 20px 6px rgba(255, 255, 255, 0.3);
-}
-.end-popup {
-  visibility: hidden;
-}
-
-.start-button {
-  width: 120px;
-  height: 40px;
-}
-
-.play-again-button {
-  width: 160px;
-  height: 40px;
-}
-
-.start-button,
-.play-again-button {
-  background-image: url(assets/bg-1.jpg);
-  margin-top: 15px;
-  padding-top: 10px;
-  border-radius: 20px;
-  border-color: 10px solid black;
-  color: aliceblue;
-  font-family: "Special Elite", cursive;
-  font-size: larger;
-  font-weight: bolder;
-  outline: none;
-}
-.disable-popup {
-  visibility: hidden;
-}
-.trigger-popup {
-  visibility: visible;
-}
-
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  object-fit: cover;
-  background-image: url(assets/header-footer-popup-bg.jpg);
-  height: 50px;
-  box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, 0.3);
-}
-
-.heading {
-  text-align: center;
-  font-size: larger;
-}
-
-.board {
-  display: flex;
-  flex: 1;
-}
-
-.card-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.footer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-image: url(assets/header-footer-popup-bg.jpg);
-  object-fit: cover;
-  height: 100px;
-  font-size: larger;
-  font-weight: bolder;
-  box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, 0.3);
-}
-
-.timer-container {
-  margin: 10px;
-  font-size: larger;
-}
-
-.reset-button {
-  background-image: url(assets/bg-1.jpg);
-  padding-top: 10px;
-  width: 120px;
-  height: 40px;
-  border-radius: 20px;
-  border-color: 10px solid black;
-  color: aliceblue;
-  font-family: "Special Elite", cursive;
-  font-weight: bold;
-  font-size: larger;
+button {
+  cursor: pointer;
   outline: none;
 }
 
-.reset-button:hover {
-  box-shadow: 0px 0px 10px 4px rgba(226, 217, 217, 0.25);
-}
-
-/* spotify */
-.playlist {
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
+button:focus {
+  outline: none;
 }
 
 /* js functionality and animation classes */
@@ -175,11 +38,11 @@ body {
   max-height: 100%;
   max-width: 100%;
   object-fit: cover;
-  margin: 5px;
-  height: 100px;
-  width: 100px;
+  height: 110px;
+  width: 110px;
   border-radius: 50%;
   perspective: 1000px;
+  margin: 5px;
 }
 
 /* this div is holding front and back of card */
@@ -214,73 +77,185 @@ body {
   transform: rotateY(180deg);
 }
 
-/* sizing images inside div */
 .front-image,
 .back-image {
   object-fit: cover;
-  height: 100px;
-  width: 100px;
+  height: 100%;
+  width: 100%;
   border-radius: 50%;
   pointer-events: none;
 }
 
-/* transitional sizes */
-@media only screen and (min-width: 550px) {
-  .start-button:hover {
-    box-shadow: 0px 0px 20px 4px rgba(255, 255, 255, 0.3);
-  }
 
-  .header {
-    font-size: larger;
-  }
 
-  .flip-card:hover .flip-card-inner {
-    box-shadow: 0px 0px 20px 4px rgba(226, 217, 217, 0.25);
-  }
+/* styling ------------------------------*/
 
-  .flip-card {
-    height: 125px;
-    width: 125px;
-  }
-  .front-image,
-  .back-image {
-    height: 125px;
-    width: 125px;
-  }
 
-  .playlist {
-    margin-top: 7px;
-    height: 80px;
-    width: 300px;
-    border-radius: 20px;
-  }
+/* pop-up---------------------- */
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-@media only screen and (min-width: 940px) {
-  .flip-card {
-    height: 180px;
-    width: 180px;
-  }
-  .front-image,
-  .back-image {
-    height: 180px;
-    width: 180px;
-  }
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 2;
+  background-image: url("assets/74693335_wide-3aff3ee4919044c417f4db9f6e6cd6cbaca22048.jpeg");
+  background-size: cover; 
+  background-position-x: right;
+  width: 100vw;
+  height: 100vh;
+}
+.start-popup,
+.end-popup {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 3;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 150px;
+  font-size: 25px;
+  text-align: center;
+  padding: 30px;
+  border-radius: 2px;
+  color: rgb(7, 7, 7);
 }
 
-/* desktop breakpoint */
-@media only screen and (min-width: 1380px) {
+.start-button, .play-again-button {
+  background-color: #c01414;
+  color: white;
+  padding: 12px;
+  border-radius: 5px;
+  margin: 20px 0 0 0;
+  width: 120px;
+  letter-spacing: 1px;
+}
+
+.start-button {
+  font-size: 32px;
+}
+
+.play-again-button {
+  font-size: 20px;
+}
+
+.start-popup-text, .end-popup-text {
+  width: 200px;
+}
+
+.end-popup {
+  visibility: hidden;
+}
+
+.disable-popup {
+  visibility: hidden;
+}
+.trigger-popup {
+  visibility: visible;
+}
+
+/* main styling------------------------- */
+
+.body {
+  background-color: rgb(7, 7, 7);
+}
+
+.header {
+  padding: 30px 0 0 0;
+  display: flex;
+  justify-content: center;
+  z-index: 4;
+}
+
+.heading {
+  text-align: center;
+  color: rgb(190, 190, 190);;
+}
+
+.board {
+  display: flex;
+  height: 75%;
+  align-items: center;
+}
+
+.card-container {
+  margin: 25px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flip-card:hover .flip-card-inner {
+  box-shadow: 0px 0px 10px 5px black;
+}
+
+/* footer ---------------------- */
+
+/* spotify */
+.playlist {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+.footer {
+  background-color: #c01414;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timer-container {
+  color: rgb(233, 233, 233);
+  font-size: 26px;
+  line-height: 28px;
+  margin: 0 0 0 25px;
+}
+
+.timer {
+  font-size: 38px;
+}
+
+.reset-button {
+  color: rgb(7, 7, 7);
+  font-size: 26px;
+  padding: 12px;
+  border-radius: 5px;
+  margin: 0 25px 0 0;
+  width: 90px;
+}
+
+@media only screen and (min-width: 768px) {
   .flip-card {
-    height: 220px;
-    width: 220px;
+    height: 200px;
+    width: 200px;
+}
+
+  .board {
+    height: 70%;
   }
-  .front-image,
-  .back-image {
-    height: 220px;
-    width: 220px;
+
+  .reset-button {
+    margin: 0 120px 0 0;
   }
-  .header {
-    height: 100px;
-    font-size: 3rem;
+
+  .timer-container {
+    margin: 0 0 0 120px;
   }
+
 }

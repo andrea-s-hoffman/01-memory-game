@@ -10,6 +10,7 @@ let resetButton = document.querySelector(`.reset-button`);
 let timer = document.querySelector(".timer");
 let timerContainer = document.querySelector(".timer-container");
 let endText = document.querySelector(".final-score");
+let formContainer = document.querySelector(".form-container");
 let sec = 0;
 let min = 0;
 let hr = 0;
@@ -71,6 +72,7 @@ startButton.addEventListener("click", (event) => {
   event.preventDefault();
   startButton.classList.add("start-timer");
   popUpWindowStart.classList.add("disable-popup");
+  formContainer.classList.add("disable-popup")
 });
 
 // shuffling & building deck
@@ -151,7 +153,7 @@ const flipCard = (e) => {
         startButton.classList.remove("start-timer");
         // two lines below take final time and display at end popup
         let finalTime = timer.textContent;
-        endText.textContent = `It took you ${finalTime} to finally make a conquest out of The Jack White Memory Game!`;
+        endText.textContent = `It took ${finalTime} to make your conquest out of The Jack White Memory Game.`;
       }, 1500);
     }
   }
@@ -194,7 +196,7 @@ const gameTimer = () => {
         timer.textContent = `${min}:${sec}`;
       }
       if (min === 60) {
-        timer.innerHTML = `GIVE UP, <br> GET A LIFE!`;
+        timer.innerHTML = `GAME OVER`;
         timer.style.fontSize = `14px`;
       }
     }
