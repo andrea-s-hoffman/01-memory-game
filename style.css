@@ -5,7 +5,9 @@
   text-decoration: none;
   border: none;
   box-sizing: border-box;
-  font-family: 'Squada One', cursive;
+  font-family: 'Chivo', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 button {
@@ -23,10 +25,6 @@ button:focus {
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
   animation-duration: 0.75s;
-}
-
-.hidden {
-  visibility: hidden;
 }
 
 .card-back > img {
@@ -93,74 +91,135 @@ button:focus {
 
 /* pop-up---------------------- */
 
-.main-content {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+.vert-logo {
+  margin-top: 55px;
+  width: 280px;
 }
 
-.form-container {
+.main-content {
+  height: 100vh;
+  width: 100vw;
+}
+
+.start-window, .end-window {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+ }
+
+.start-bg {
+  /* visibility: hidden; */
+  background-image: url("assets/jackwhite-game-background-01.png");
+  background-size: cover; 
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 0;
+}
+
+.end-bg {
+  background-image: url("assets/jackwhite-game-logo-06.png");
+  background-size: cover; 
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 0;
+}
+
+.popup-container {
   display: flex;
   justify-content: center;
-  align-items: center;
   top: 0;
   left: 0;
   position: absolute;
-  z-index: 2;
-  background-image: url("assets/74693335_wide-3aff3ee4919044c417f4db9f6e6cd6cbaca22048.jpeg");
-  background-size: cover; 
-  background-position-x: right;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
-.start-popup,
-.end-popup {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  z-index: 3;
+.start-popup {
+  height: 375px;
+  width: 375px;
+  border-radius: 50%;
   background-color: white;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.end-popup {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   align-items: center;
-  top: 150px;
-  font-size: 25px;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.direction {
+  margin-top: 15px;
+  width: 225px;
   text-align: center;
-  padding: 30px;
-  border-radius: 2px;
-  color: rgb(7, 7, 7);
+}
+
+.bold {
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 15px;
+  letter-spacing: 1px;
+  font-size: 16px;
 }
 
 .start-button, .play-again-button {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
   background-color: #c01414;
+  margin-top: 10px;
+  padding: 5px;
+  width: 90px;
+  border-radius: 3px;
   color: white;
-  padding: 12px;
-  border-radius: 5px;
-  margin: 20px 0 0 0;
-  width: 120px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  cursor: pointer;
 }
 
-.start-button {
-  font-size: 32px;
+.game-over {
+  width: 50%;
 }
 
 .play-again-button {
-  font-size: 20px;
+  font-size: 16px;
+  width: 150px;
 }
 
-.start-popup-text, .end-popup-text {
+.start-popup-text {
   width: 200px;
 }
-
-.end-popup {
-  visibility: hidden;
+.end-popup-text {
+  text-align: center;
+  width: 200px;
+  margin: 15px 0 5px 0;
 }
 
-.disable-popup {
+.hide {
   visibility: hidden;
 }
-.trigger-popup {
+.show {
   visibility: visible;
 }
 
@@ -174,17 +233,16 @@ button:focus {
   padding: 30px 0 0 0;
   display: flex;
   justify-content: center;
-  z-index: 4;
 }
 
-.heading {
-  text-align: center;
-  color: rgb(190, 190, 190);;
+.horiz-logo {
+  width: 80vw;
+  position: fixed;
 }
 
 .board {
   display: flex;
-  height: 75%;
+  height: 85%;
   align-items: center;
 }
 
@@ -192,7 +250,9 @@ button:focus {
   margin: 25px 0 0 0;
   display: flex;
   flex-wrap: wrap;
+  /* height: 65vh; */
   justify-content: center;
+  align-items: center;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -206,6 +266,25 @@ button:focus {
   height: 80px;
   width: 80px;
   border-radius: 50%;
+  bottom: 50px;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 15px;
+  z-index: 1;
+}
+
+.spotify-bg {
+  height: 110px;
+  width: 110px;
+  background-color: #c01414;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 0;
+  z-index: 0;
 }
 
 .footer {
@@ -215,29 +294,36 @@ button:focus {
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 100px;
+  height: 10vh;
   align-items: center;
   justify-content: space-between;
 }
 
 .timer-container {
-  color: rgb(233, 233, 233);
-  font-size: 26px;
-  line-height: 28px;
-  margin: 0 0 0 25px;
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+  letter-spacing: 2px;
+  margin: 0 0 0 20px;
+  text-transform: uppercase;
+  line-height: 24px;
 }
 
 .timer {
-  font-size: 38px;
+  font-size: 26px;
 }
 
 .reset-button {
-  color: rgb(7, 7, 7);
-  font-size: 26px;
-  padding: 12px;
-  border-radius: 5px;
-  margin: 0 25px 0 0;
+  font-weight: 700;
+  font-size: 18px;
+  background-color: white;
+  padding: 5px;
   width: 90px;
+  border-radius: 3px;
+  color: black;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin: 0 25px 0 0;
 }
 
 @media only screen and (min-width: 768px) {

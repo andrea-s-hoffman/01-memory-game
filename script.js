@@ -4,13 +4,15 @@ let cardContainer = document.querySelector(".card-container");
 let openCards = [];
 let hiddenCards = [];
 let startButton = document.querySelector(".start-button");
-let popUpWindowEnd = document.querySelector(".end-popup");
-let popUpWindowStart = document.querySelector(".start-popup");
-let resetButton = document.querySelector(`.reset-button`);
 let timer = document.querySelector(".timer");
 let timerContainer = document.querySelector(".timer-container");
-let endText = document.querySelector(".final-score");
-let formContainer = document.querySelector(".form-container");
+let endText = document.querySelector(".end-popup-text");
+let horizLogo = document.querySelector(".horiz-logo");
+let endWindow = document.querySelector(".end-window");
+let startWindow = document.querySelector(".start-window");
+let mainContent = document.querySelector(".main-content");
+let resetButton = document.querySelector(".reset-button");
+let playAgainButton =document.querySelector(".play-again-button");
 let sec = 0;
 let min = 0;
 let hr = 0;
@@ -71,8 +73,9 @@ let cards = [
 startButton.addEventListener("click", (event) => {
   event.preventDefault();
   startButton.classList.add("start-timer");
-  popUpWindowStart.classList.add("disable-popup");
-  formContainer.classList.add("disable-popup")
+  horizLogo.classList.remove("hide");
+  startWindow.classList.add("hide");
+  mainContent.classList.remove("hide");
 });
 
 // shuffling & building deck
@@ -148,7 +151,8 @@ const flipCard = (e) => {
     if (hiddenCards.length === 12) {
       setTimeout(() => {
         cardContainer.removeEventListener("click", flipCard);
-        popUpWindowEnd.classList.add("trigger-popup");
+        endWindow.classList.remove("hide");
+        mainContent.classList.add("hide");
         // line below to stop timer
         startButton.classList.remove("start-timer");
         // two lines below take final time and display at end popup
@@ -164,8 +168,8 @@ cardContainer.addEventListener("click", flipCard);
 // matched function that is pulled into flipCard function
 let matched = () => {
   setTimeout(() => {
-    openCards[0].classList.add(`hidden`);
-    openCards[1].classList.add(`hidden`);
+    openCards[0].classList.add(`hide`);
+    openCards[1].classList.add(`hide`);
     cardContainer.addEventListener("click", flipCard);
     openCards = [];
   }, 1500);
@@ -195,7 +199,7 @@ const gameTimer = () => {
       if (min > 9) {
         timer.textContent = `${min}:${sec}`;
       }
-      if (min === 60) {
+      if (min === 59) {
         timer.innerHTML = `GAME OVER`;
         timer.style.fontSize = `14px`;
       }
@@ -212,3 +216,11 @@ let restartGame = () => {
   min = 0;
 };
 resetButton.addEventListener("click", restartGame);
+
+let replayGame = () => {
+  // location.reload();
+  restartGame();
+  endWindow.classList.add("hide");
+  mainContent.classList.remove("hide");
+}
+playAgainButton.addEventListener("click", replayGame);
