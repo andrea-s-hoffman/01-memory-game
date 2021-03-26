@@ -77,6 +77,7 @@ startButton.addEventListener("click", (event) => {
   horizLogo.classList.remove("hide");
   startWindow.classList.add("hide");
   mainContent.classList.remove("hide");
+  startButton.classList.add("hide");
 });
 
 // shuffling & building deck
