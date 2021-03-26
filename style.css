@@ -36,8 +36,8 @@ button:focus {
   max-height: 100%;
   max-width: 100%;
   object-fit: cover;
-  height: 110px;
-  width: 110px;
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
   perspective: 1000px;
   margin: 5px;
@@ -242,7 +242,7 @@ button:focus {
 
 .board {
   display: flex;
-  height: 85%;
+  height: 84%;
   align-items: center;
 }
 
@@ -375,5 +375,18 @@ button:focus {
     top: 0;
     z-index: 0;
   }
+
+}
+
+@media only screen and (min-width: 1500px) {
+
+.flip-card {
+  width: 200px;
+  height: 200px;
+}
+
+.card-container {
+  margin: 100px;
+}
 
 }
