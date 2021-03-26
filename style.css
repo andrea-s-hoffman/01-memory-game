@@ -349,7 +349,7 @@ button:focus {
   }
 
   .card-container {
-    margin: 50px;
+    margin: 70px;
   }
 
   .main-content {
@@ -378,7 +378,14 @@ button:focus {
 
 }
 
-@media only screen and (min-width: 1500px) {
+@media only screen and (min-width: 1550px) {
+
+.card-container {
+  margin: 112px;
+}
+
+}
+@media only screen and (min-width: 1700px) {
 
 .flip-card {
   width: 200px;
@@ -386,7 +393,7 @@ button:focus {
 }
 
 .card-container {
-  margin: 100px;
+  margin: 100px 125px;
 }
 
 }
