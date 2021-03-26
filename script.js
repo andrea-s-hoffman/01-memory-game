@@ -13,6 +13,7 @@ let startWindow = document.querySelector(".start-window");
 let mainContent = document.querySelector(".main-content");
 let resetButton = document.querySelector(".reset-button");
 let playAgainButton =document.querySelector(".play-again-button");
+let startPopUp = document.querySelector(".start-popup");
 let sec = 0;
 let min = 0;
 let hr = 0;
@@ -155,6 +156,7 @@ const flipCard = (e) => {
         mainContent.classList.add("hide");
         // line below to stop timer
         startButton.classList.remove("start-timer");
+        startPopUp.classList.add("hide");
         // two lines below take final time and display at end popup
         let finalTime = timer.textContent;
         endText.textContent = `It took ${finalTime} to make your conquest out of The Jack White Memory Game.`;
@@ -218,9 +220,9 @@ let restartGame = () => {
 resetButton.addEventListener("click", restartGame);
 
 let replayGame = () => {
-  // location.reload();
-  restartGame();
-  endWindow.classList.add("hide");
-  mainContent.classList.remove("hide");
+  location.reload();
+  // restartGame();
+  // endWindow.classList.add("hide");
+  // mainContent.classList.remove("hide");
 }
 playAgainButton.addEventListener("click", replayGame);

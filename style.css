@@ -328,20 +328,52 @@ button:focus {
 
 @media only screen and (min-width: 768px) {
   .flip-card {
-    height: 200px;
-    width: 200px;
+    height: 165px;
+    width: 165px;
 }
 
-  .board {
-    height: 70%;
+  /* .board {
+    height: unset;
+  } */
+
+  .horiz-logo {
+    display: none;
   }
 
   .reset-button {
-    margin: 0 120px 0 0;
+    margin: 0 75px 0 0;
   }
 
   .timer-container {
-    margin: 0 0 0 120px;
+    margin: 0 0 0 75px;
+  }
+
+  .card-container {
+    margin: 50px;
+  }
+
+  .main-content {
+    width: 65vw;
+    right: 0;
+    position: absolute;
+    visibility: visible;
+  }
+
+  .start-window {
+    background-image: url("assets/jackwhite-game-background-01.png");
+    width: 35vw;
+    left: 0;
+    background-position: initial;
+    visibility: visible;
+  }
+
+  .start-bg {
+    /* visibility: hidden; */
+    background-image: none;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: 0;
   }
 
 }
