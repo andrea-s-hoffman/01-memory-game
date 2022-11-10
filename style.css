@@ -5,7 +5,7 @@
   text-decoration: none;
   border: none;
   box-sizing: border-box;
-  font-family: 'Chivo', sans-serif;
+  font-family: "Chivo", sans-serif;
   font-weight: 400;
   font-size: 14px;
 }
@@ -84,10 +84,7 @@ button:focus {
   pointer-events: none;
 }
 
-
-
 /* styling ------------------------------*/
-
 
 /* pop-up---------------------- */
 
@@ -101,16 +98,17 @@ button:focus {
   width: 100vw;
 }
 
-.start-window, .end-window {
+.start-window,
+.end-window {
   position: absolute;
   width: 100vw;
   height: 100vh;
- }
+}
 
 .start-bg {
   /* visibility: hidden; */
   background-image: url("assets/jackwhite-game-background-01.png");
-  background-size: cover; 
+  background-size: cover;
   background-position: center;
   width: 100vw;
   height: 100vh;
@@ -120,7 +118,7 @@ button:focus {
 
 .end-bg {
   background-image: url("assets/jackwhite-game-logo-06.png");
-  background-size: cover; 
+  background-size: cover;
   background-position: center;
   width: 100vw;
   height: 100vh;
@@ -184,8 +182,9 @@ button:focus {
   font-size: 16px;
 }
 
-.start-button, .play-again-button {
-  font-family: 'Chivo', sans-serif;
+.start-button,
+.play-again-button {
+  font-family: "Chivo", sans-serif;
   font-weight: 700;
   font-size: 18px;
   background-color: #c01414;
@@ -196,6 +195,12 @@ button:focus {
   color: white;
   letter-spacing: 2px;
   cursor: pointer;
+  transition: 400ms;
+}
+
+.start-button.grow {
+  scale: 1.2;
+  background-color: #de1717;
 }
 
 .game-over {
@@ -330,7 +335,7 @@ button:focus {
   .flip-card {
     height: 165px;
     width: 165px;
-}
+  }
 
   /* .board {
     height: unset;
@@ -375,25 +380,20 @@ button:focus {
     top: 0;
     z-index: 0;
   }
-
 }
 
 @media only screen and (min-width: 1550px) {
-
-.card-container {
-  margin: 112px;
-}
-
+  .card-container {
+    margin: 112px;
+  }
 }
 @media only screen and (min-width: 1700px) {
+  .flip-card {
+    width: 200px;
+    height: 200px;
+  }
 
-.flip-card {
-  width: 200px;
-  height: 200px;
-}
-
-.card-container {
-  margin: 100px 125px;
-}
-
+  .card-container {
+    margin: 100px 125px;
+  }
 }

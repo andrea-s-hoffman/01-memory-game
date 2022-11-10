@@ -4,50 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Jack White Memory Game</title>
+
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">    
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="body">
-
     <section class="popup-container">
-
-        <div class="start-window">
-          <div class="start-popup">
-            <img class="vert-logo" src="assets/jackwhite-game-logo-02.png" alt="">
-            <p class="direction">Test your Icky Lump knowledge by matching the various Jack White acts as fast as you can.</p>
-            <p class="bold">best of luck.</p>
-            <button type="submit" class="start-button">START</button>
-          </div>
-          <div class="start-bg"></div>
+      <div class="start-window">
+        <div class="start-popup">
+          <img
+            class="vert-logo"
+            src="assets/jackwhite-game-logo-02.png"
+            alt=""
+          />
+          <p class="direction">
+            Test your Icky Lump knowledge by matching the various Jack White
+            acts as fast as you can.
+          </p>
+          <p class="bold">best of luck.</p>
+          <button type="submit" class="start-button">START</button>
         </div>
+        <div class="start-bg"></div>
+      </div>
 
-        <div class="end-window hide">
-          <div class="end-popup">
-            <img class="game-over" src="assets/game-over-05.png" alt="">
-            <p class ="end-popup-text">It took ${finalTime} to make your conquest out of The Jack White Memory Game.</p>
-            <button class="play-again-button">PLAY AGAIN</button>
-
-          </div>
-          <div class="end-bg"></div>
+      <div class="end-window hide">
+        <div class="end-popup">
+          <img class="game-over" src="assets/game-over-05.png" alt="" />
+          <p class="end-popup-text">
+            It took ${finalTime} to make your conquest out of The Jack White
+            Memory Game.
+          </p>
+          <button class="play-again-button">PLAY AGAIN</button>
         </div>
-
+        <div class="end-bg"></div>
+      </div>
     </section>
 
     <section class="main-content hide">
       <header class="header">
-        <img class="horiz-logo hide" src="assets/jackwhite-game-horiz-logo-04.png" alt="">
+        <img
+          class="horiz-logo hide"
+          src="assets/jackwhite-game-horiz-logo-04.png"
+          alt=""
+        />
       </header>
       <main class="board">
         <section class="card-container"></section>
       </main>
       <footer class="footer">
-        <div class="timer-container">time: <div class="timer">00:00 </div></div>
-        <div class=><iframe class="playlist" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX2WREH6Ohrd9" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
-        <div class="spotify-bg"></div>
+        <div class="timer-container">
+          time:
+          <div class="timer">00:00</div>
+        </div>
+        <div id="embed-iframe"></div>
         <button class="reset-button">RESET</button>
       </footer>
     </section>
+    <script
+      src="https://open.spotify.com/embed-podcast/iframe-api/v1"
+      async
+    ></script>
     <script src="script.js"></script>
   </body>
 </html>
